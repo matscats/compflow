@@ -24,4 +24,5 @@ urlpatterns = [
     path("", include("user.urls")),
     path("", include("subject.urls")),
     path("", include("history.urls")),
+    path("", include("subject_directory.urls")),
 ]

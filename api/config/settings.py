@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "jwt_auth",
     "subject",
     "history",
+    "subject_directory",
 ]
 
 REST_FRAMEWORK = {
