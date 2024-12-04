@@ -20,7 +20,7 @@ class History(models.Model):
 
     @property
     def attended_correctly(self) -> bool:
-        return self.attended_in_period < self.subject.period
+        return self.attended_in_period == self.subject.period
 
     class Meta:
         unique_together = ("subject", "user")

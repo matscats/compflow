@@ -11,6 +11,14 @@ class HistorySerializer(serializers.ModelSerializer):
         model = History
         fields = [
             "subject",
+            "average",
+            "attended_in_period",
+            "attended_late",
+            "attended_early",
+            "attended_correctly",
+        ]
+        read_only_field = [
+            "id",
             "attended_in_period",
             "attended_late",
             "attended_early",

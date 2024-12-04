@@ -17,7 +17,7 @@ class HistoryViewSet(viewsets.ModelViewSet):
         permissions = super().get_permissions()
 
         if self.action in ["retrieve", "update", "partial_update", "destroy"]:
-            permissions.append(IsOwnerOfHistory)
+            permissions.append(IsOwnerOfHistory())
 
         return permissions
 
