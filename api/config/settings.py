@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "subject",
     "history",
     "subject_directory",
+    "post",
 ]
 
 REST_FRAMEWORK = {
