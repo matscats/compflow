@@ -26,4 +26,5 @@ urlpatterns = [
     path("", include("history.urls")),
     path("", include("subject_directory.urls")),
     path("", include("post.urls")),
+    path("", include("schedule.urls")),
 ]
