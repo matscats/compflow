@@ -19,6 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
             "last_name",
             "is_student",
             "is_teacher",
+            "entry_period",
         ]
         extra_kwargs = {
             "password": {"write_only": True},
@@ -37,6 +38,7 @@ class UserSerializer(serializers.ModelSerializer):
 
         is_student = data.get("is_student", False)
         is_teacher = data.get("is_teacher", False)
+        entry_period = data.get("entry_period", None)
 
         if is_student and is_teacher:
             raise serializers.ValidationError(
@@ -49,6 +51,13 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 {
                     "non_field_errors": "O usuário deve ser pelo menos aluno ou professor."
+                }
+            )
+
+        if entry_period is not None and is_teacher:
+            raise serializers.ValidationError(
+                {
+                    "non_field_errors": "Professores não devem informar um período de ingresso."
                 }
             )
 
