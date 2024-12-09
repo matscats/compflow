@@ -9,6 +9,11 @@ Desta forma, a aplicação conta com funcionaliades como:
 - Armazenamento de materiais das disciplinas cursadas
 - Fórum de notícias para acompanhamento de temas relevantes.
 
+**Projeto idealizado e criado pelos alunos de Engenharia de Computação da UFRN**
+- Alice Maria Fonseca Victorino Freire
+- Maria Eduarda Lima da Luz
+- Mateus Cavalcanti Alves Teixeira Silva
+
 ## Histórias de Usuário
 
 Histórias de usuário são descrições curtas e simples das funcionalidades ou requisitos que um sistema deve ter, do ponto de vista do usuário. Elas são usadas para guiar o desenvolvimento de software, ajudando a equipe a entender o que é necessário para atender às necessidades dos usuários.
