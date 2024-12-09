@@ -242,7 +242,7 @@ $ docker build -t compflow .
 **Executar a aplicação**
 Após a criação da imagem, a aplicação pode ser executada com o comando abaixo
 ```
-$ docker run -p 8000:8000 compflow
+$ docker run -d -p 8000:8000 compflow
 ```
 
 Após isso, a aplicação estará rodando em http://localhost:8000/
