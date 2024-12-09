@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"alice\",\n    \"password\": \"oi123\"\n}",
+							"raw": "{\n    \"username\": \"mateus\",\n    \"password\": \"oi123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -200,7 +200,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMzNDMxNDQ5LCJpYXQiOjE3MzM0MzExNDksImp0aSI6IjhjZTFjZmUxZGMxMjQxZGU5ZDlhMjQxYWRlMTI5OWVhIiwidXNlcl9pZCI6Mn0.RZHsCXFhqVzgHQL9XOK9y5qvNPHzjSBZ8c_LZS_ccCE"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMzNzg1NDc4LCJpYXQiOjE3MzM3ODUxNzgsImp0aSI6IjY2MzdkZjRhOTNiMTQ4NzI4M2JiZjU1NDgwYTYwMTQ4IiwidXNlcl9pZCI6MX0.FU3ASEM0Wo3KLFd-pgjnWqrlxda2CPDRBtiWj3TOloU"
 							}
 						},
 						"method": "POST",
@@ -224,25 +224,25 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNzM3ODI4LCJpYXQiOjE3MzI3Mzc0OTUsImp0aSI6ImRmOWQ0OGJkZTg5ZjQyOWJhMjEwMWNiMmJkYTM3ODIyIiwidXNlcl9pZCI6M30._snkoTSt1gWa6Bxh5b2Q7IBsTJxJTPhnMc4XCD2fqS0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMzNzg1NDc4LCJpYXQiOjE3MzM3ODUxNzgsImp0aSI6IjY2MzdkZjRhOTNiMTQ4NzI4M2JiZjU1NDgwYTYwMTQ4IiwidXNlcl9pZCI6MX0.FU3ASEM0Wo3KLFd-pgjnWqrlxda2CPDRBtiWj3TOloU"
 							}
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/subject/:id/",
+							"raw": "{{host}}/subject/:code/",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"subject",
-								":id",
+								":code",
 								""
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": ""
+									"key": "code",
+									"value": "ECT3203"
 								}
 							]
 						}
@@ -255,18 +255,18 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/subject/:id/",
+							"raw": "{{host}}/subject/:code/",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"subject",
-								":id",
+								":code",
 								""
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "code",
 									"value": ""
 								}
 							]
@@ -286,19 +286,19 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/subject/:id/",
+							"raw": "{{host}}/subject/:code/",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"subject",
-								":id",
+								":code",
 								""
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": "DCA3206"
+									"key": "code",
+									"value": ""
 								}
 							]
 						}
@@ -636,83 +636,6 @@
 					"response": []
 				},
 				{
-					"name": "File",
-					"request": {
-						"method": "PATCH",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Files",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNDE5MjE3LCJpYXQiOjE3MzI0MTg5MTcsImp0aSI6IjU0YjdhMzg1MWViZTQyYWZhOTY3NTRkOTI1OWUxMzA1IiwidXNlcl9pZCI6Mn0.pwvW0Q_EFamdWtDSFfFICd2HLi5qBHMfA6WRLTJ3VKw"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/directory/:directory_id/file/",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"directory",
-								":directory_id",
-								"file",
-								""
-							],
-							"variable": [
-								{
-									"key": "directory_id",
-									"value": "3"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "File",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNDEyOTE2LCJpYXQiOjE3MzI0MTI2MTYsImp0aSI6IjYyMzBkNWY5NGM5NzQ3YjQ4Nzc4NTRiYWYzZWU3ODdiIiwidXNlcl9pZCI6MX0.A2_yccO1C9_8lu5zXCin4j4H5VZV_7JpgpKKXx9_s3E"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/directory/:directory_id/file/:id/",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"directory",
-								":directory_id",
-								"file",
-								":id",
-								""
-							],
-							"variable": [
-								{
-									"key": "directory_id",
-									"value": "2"
-								},
-								{
-									"key": "id",
-									"value": "2"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Share File",
 					"request": {
 						"auth": {
@@ -758,6 +681,75 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNDEyOTE2LCJpYXQiOjE3MzI0MTI2MTYsImp0aSI6IjYyMzBkNWY5NGM5NzQ3YjQ4Nzc4NTRiYWYzZWU3ODdiIiwidXNlcl9pZCI6MX0.A2_yccO1C9_8lu5zXCin4j4H5VZV_7JpgpKKXx9_s3E"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/directory/:directory_id/file/:id/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"directory",
+								":directory_id",
+								"file",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "directory_id",
+									"value": "2"
+								},
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Files",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNDE5MjE3LCJpYXQiOjE3MzI0MTg5MTcsImp0aSI6IjU0YjdhMzg1MWViZTQyYWZhOTY3NTRkOTI1OWUxMzA1IiwidXNlcl9pZCI6Mn0.pwvW0Q_EFamdWtDSFfFICd2HLi5qBHMfA6WRLTJ3VKw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/directory/:directory_id/file/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"directory",
+								":directory_id",
+								"file",
+								""
+							],
+							"variable": [
+								{
+									"key": "directory_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -790,15 +782,6 @@
 					"response": []
 				},
 				{
-					"name": "Posts",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{host}}/post/"
-					},
-					"response": []
-				},
-				{
 					"name": "Post",
 					"request": {
 						"auth": {
@@ -826,6 +809,15 @@
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}/post/"
 					},
 					"response": []
 				},
