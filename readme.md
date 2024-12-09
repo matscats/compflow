@@ -15,7 +15,7 @@ Histórias de usuário são descrições curtas e simples das funcionalidades ou
 
 Desse modo, a primeira versão do CompFlow foi guiada por meio de cinco histórias de usuários iniciais:
 
-> ** Primeira História de Usuário **
+** Primeira História de Usuário **
 > Como aluno, eu quero armazenar meus materiais de estudo em pastas organizadas
 por disciplina, fornecidas pelo sistema.
 > ** Critérios de aceitação **
@@ -25,7 +25,7 @@ disciplina.
 > - O sistema exibe a lista de arquivos de cada disciplina.
 > - O aluno pode renomear ou excluir arquivos e pastas.
 
-> ** Segunda História de Usuário **
+** Segunda História de Usuário **
 > Como aluno, eu quero visualizar a estrutura curricular completa do curso de
 Engenharia de Computação e da ênfase em Computação, para planejar meu
 percurso acadêmico.
@@ -33,7 +33,7 @@ percurso acadêmico.
 > - O aluno pode visualizar disciplinas obrigatórias, eletivas e optativas.
 > - A estrutura curricular mostra pré-requisitos de cada disciplina.
 
-> ** Terceira História de Usuário **
+** Terceira História de Usuário **
 > Como professor, eu quero fornecer informações claras e acessíveis acerca do
 curso por meio da publicação de notícias atualizadas e recentes.
 > - O professor pode criar e editar publicações de notícias sobre o curso.
@@ -42,13 +42,13 @@ de publicação.
 > - Alunos podem visualizar as notícias diretamente pelo portal do curso.
 > - O coordenador pode anexar links ou documentos relevantes às publicações.
 
-> ** Quarta História de Usuário **
+** Quarta História de Usuário **
 > Como aluno, eu quero compartilhar materiais de estudo com meus colegas.
 > - O aluno pode selecionar um ou mais arquivos armazenados para
 compartilhar.
 > - O arquivo compartilhado fica disponível na pasta da mesma disciplina para o aluno que recebeu o compartilhamento
 
-> ** Quinta História de Usuário**
+** Quinta História de Usuário**
 > Como aluno, eu quero montar minha própria grade, organizada por período, de
 acordo com as disciplinas que planejo cursar
 > - O aluno pode adicionar disciplinas aos períodos futuros de forma
@@ -70,7 +70,8 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 
 ### Rotas de usuário
 
-| Nome | Método HTTP | URL | Permissão |
+| Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar Usuário | POST | /user/ | |
 | Buscar Usuário | GET | /user/:id | |
 | Atualizar Usuário | PATCH | /user/:id/ | |
@@ -79,7 +80,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Listar Usuários | GET | /user/ | |
 
 ** Exemplo de Requisição para criação de usuário **
-`json
+```
 {
     "username": "mateus",
     "email": "mateus@email.com",
@@ -89,32 +90,34 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
     "is_student": false
     "entry_period": "2021.1"
 }
-`
+```
 
 ### Rotas de autenticação
 
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar Token JWT | POST | /auth/token/ | |
 | Atualizar Token JWT | POST | /auth/token/refresh/ | |
 
 ** Exemplo de Requisição para criação de token **
-`json
+```
 {
     "username": "alice",
     "password": "oi123"
 }
-`
+```
 
 ** Exemplo de Requisição para atualização de token **
-`json
+```
 {
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMjgyMzg5NSwiaWF0IjoxNzMyNzM3NDk1LCJqdGkiOiJkMDQ4ZTUwMmVmNmQ0ZGY4OTk3MzFlMWZmYWVkMTEyZSIsInVzZXJfaWQiOjN9.LleQ-6KgYOJJbxPgNdHQ84pAW-WM4YMjRu5j3BveBto"
 }
-`
+```
 
 ### Rotas para cadastro de disciplinas no sistema
 
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar disciplina | POST | /subject/ | Ser professor |
 | Ver disciplina | GET | /subject/:code/ | |
 | Atualizar disciplina | PATCH | /subject/:code/ | Ser professor |
@@ -123,17 +126,18 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Listar pré-requisitos de forma recursiva (pré-requisitos de pré-requisitos e etc) | GET | /subject/:code/prerequisites/?deep=true | |
 
 ** Exemplo de Requisição para cadastro de disciplina **
-`json
+```
 {
     "code": "DCA3206",
     "name": " MATEMÁTICA DISCRETA",
     "period": "2",
     "prerequisites": ["ECT3101"]
 }
-`
+```
 
 ### Rotas para criação de histórico escolar
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar histórico de uma disciplina | POST | /history/ | Ser aluno | |
 | Ver histórico de uma disciplina | GET | /history/:id/ | Ser aluno e ser o criador do histórico | |
 | Atualizar histórico de uma disciplina | PATCH | /history/:id/ | Ser aluno e ser o criador do histórico | |
@@ -141,62 +145,67 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Listar histórico de todas as disciplinas | GET | /history/ |  Ser aluno | |
 
 ** Exemplo de Requisição para cadastro de histórico **
-`json
+```
 {
     "subject": "ECT3101",
     "average": "10",
     "attended_in_period": "1"
 }
-`
+```
 
 ### Rotas para criação de diretório
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar diretório de uma disciplina | POST | /directory/ | Ser aluno |
 | Excuir diretório de uma disciplina | DELETE | /directory/:id/ | Ser aluno e ser o criador do diretório |
 | Ver o diretório | GET | /directory/:id/ | Ser aluno e ser o criador do diretório |
 | Listar todos os diretórios do aluno | GET | /directory/ | Ser aluno |
 
 ** Exemplo de Requisição para criação de diretório **
-`json
+```
 {
     "subject": "ECT3101",
 }
-`
+```
 
 ### Rotas para criação de arquivo de diretório
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar arquivo de diretório | POST | /directory/:directory_id/file/ | Ser aluno | 
 | Ver arquivo | GET | /directory/:directory_id/file/:id/ | Ser aluno e ser o dono do diretório |
 | Listar todos os arquivos do diretório | GET | /directory/:directory_id/file/ | Ser aluno e ser o dono do diretório |
 | Compartilhar arquivo | POST | /directory/:directory_id/file/:file_id/share/ | Ser aluno e ser o dono do diretório |
 
-** Exemplo de Requisição para criação de diretório **
-`form-data
+** Exemplo de Requisição para criação de diretório (form-data) **
+```
     file: arquivo
     name: nome do arquivo
-`
+```
 
 ** Exemplo de Requisição para compartilhar arquivo **
-`json
+```
 {
     "shared_to_user": 2
 }
-`
+```
 
 ### Rotas para criação de postagem no sistema
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar uma nova postagem | POST | /post/ | Ser professor |
 | Ver uma postagem | GET | /post/:id/ | |
 | Atualizar uma postagem | PATCH | /post/:id/ | Ser professor e o criador da postagem |
 | Excluir uma postagem | DELETE | /post/:id/ | Ser professor e o criador da postagem |
 
-`form-data
+** Exemplo de Requisição para criação de postagem (form-data) **
+```
     file: arquivo anexado
     text: texto da postagem
-`
+```
 
 ### Rotas para criação de planejamento de semestres futuros
 | Nome | Método HTTP | URL | Permissao |
+|------|-------------|-----|-----------|
 | Criar um planejamento de grade | POST | /schedule/ | Ser aluno |
 | Ver o planejamento | GET | /schedule/:id/ | Ser aluno e ser o criador do planejamento |
 | Atualizar um planejamento | PATCH | /schedule/:id/ | Ser aluno e ser o criador do planejamento |
@@ -204,12 +213,12 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Listas todos os planejamentos | GET | /schedule/ | Ser aluno e ser o criador do planejamento |
 
 ** Exemplo de Requisição para criação de planejamento **
-`json
+```
 {
     "subjects": ["ECT3101", "ECT3102", "ECT3103"],
     "period": "2025.1"
 }
-`
+```
 
 ___
 
