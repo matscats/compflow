@@ -18,7 +18,7 @@ Desse modo, a primeira versão do CompFlow foi guiada por meio de cinco históri
 **Primeira História de Usuário**
 > Como aluno, eu quero armazenar meus materiais de estudo em pastas organizadas
 por disciplina, fornecidas pelo sistema.
-> ** Critérios de aceitação **
+> **Critérios de aceitação**
 > - O sistema permite fazer upload de arquivos de diferentes formatos.
 > - O aluno pode organizar materiais em subpastas dentro de cada pasta de
 disciplina.
@@ -29,6 +29,7 @@ disciplina.
 > Como aluno, eu quero visualizar a estrutura curricular completa do curso de
 Engenharia de Computação e da ênfase em Computação, para planejar meu
 percurso acadêmico.
+> **Critérios de aceitação**
 > - O sistema exibe a estrutura curricular completa organizada por período.
 > - O aluno pode visualizar disciplinas obrigatórias, eletivas e optativas.
 > - A estrutura curricular mostra pré-requisitos de cada disciplina.
@@ -36,6 +37,7 @@ percurso acadêmico.
 **Terceira História de Usuário**
 > Como professor, eu quero fornecer informações claras e acessíveis acerca do
 curso por meio da publicação de notícias atualizadas e recentes.
+> **Critérios de aceitação**
 > - O professor pode criar e editar publicações de notícias sobre o curso.
 > - O sistema exibe uma lista de notícias na página inicial, organizadas por data
 de publicação.
@@ -44,13 +46,15 @@ de publicação.
 
 **Quarta História de Usuário**
 > Como aluno, eu quero compartilhar materiais de estudo com meus colegas.
+> **Critérios de aceitação**
 > - O aluno pode selecionar um ou mais arquivos armazenados para
 compartilhar.
 > - O arquivo compartilhado fica disponível na pasta da mesma disciplina para o aluno que recebeu o compartilhamento
 
 **Quinta História de Usuário**
 > Como aluno, eu quero montar minha própria grade, organizada por período, de
-acordo com as disciplinas que planejo cursar
+acordo com as disciplinas que planejo cursar.
+> **Critérios de aceitação**
 > - O aluno pode adicionar disciplinas aos períodos futuros de forma
 customizável.
 > - Disciplinas com pré-requisitos não podem ser adicionadas se os
