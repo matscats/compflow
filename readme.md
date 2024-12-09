@@ -15,7 +15,7 @@ Histórias de usuário são descrições curtas e simples das funcionalidades ou
 
 Desse modo, a primeira versão do CompFlow foi guiada por meio de cinco histórias de usuários iniciais:
 
-** Primeira História de Usuário **
+**Primeira História de Usuário**
 > Como aluno, eu quero armazenar meus materiais de estudo em pastas organizadas
 por disciplina, fornecidas pelo sistema.
 > ** Critérios de aceitação **
@@ -25,7 +25,7 @@ disciplina.
 > - O sistema exibe a lista de arquivos de cada disciplina.
 > - O aluno pode renomear ou excluir arquivos e pastas.
 
-** Segunda História de Usuário **
+**Segunda História de Usuário**
 > Como aluno, eu quero visualizar a estrutura curricular completa do curso de
 Engenharia de Computação e da ênfase em Computação, para planejar meu
 percurso acadêmico.
@@ -33,7 +33,7 @@ percurso acadêmico.
 > - O aluno pode visualizar disciplinas obrigatórias, eletivas e optativas.
 > - A estrutura curricular mostra pré-requisitos de cada disciplina.
 
-** Terceira História de Usuário **
+**Terceira História de Usuário**
 > Como professor, eu quero fornecer informações claras e acessíveis acerca do
 curso por meio da publicação de notícias atualizadas e recentes.
 > - O professor pode criar e editar publicações de notícias sobre o curso.
@@ -42,13 +42,13 @@ de publicação.
 > - Alunos podem visualizar as notícias diretamente pelo portal do curso.
 > - O coordenador pode anexar links ou documentos relevantes às publicações.
 
-** Quarta História de Usuário **
+**Quarta História de Usuário**
 > Como aluno, eu quero compartilhar materiais de estudo com meus colegas.
 > - O aluno pode selecionar um ou mais arquivos armazenados para
 compartilhar.
 > - O arquivo compartilhado fica disponível na pasta da mesma disciplina para o aluno que recebeu o compartilhamento
 
-** Quinta História de Usuário**
+**Quinta História de Usuário**
 > Como aluno, eu quero montar minha própria grade, organizada por período, de
 acordo com as disciplinas que planejo cursar
 > - O aluno pode adicionar disciplinas aos períodos futuros de forma
@@ -79,7 +79,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Ver Usuário Atual Logado | GET | /user/me/ | Ser o próprio usuário logado
 | Listar Usuários | GET | /user/ | |
 
-** Exemplo de Requisição para criação de usuário **
+**Exemplo de Requisição para criação de usuário**
 ```
 {
     "username": "mateus",
@@ -99,7 +99,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Criar Token JWT | POST | /auth/token/ | |
 | Atualizar Token JWT | POST | /auth/token/refresh/ | |
 
-** Exemplo de Requisição para criação de token **
+**Exemplo de Requisição para criação de token**
 ```
 {
     "username": "alice",
@@ -107,7 +107,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 }
 ```
 
-** Exemplo de Requisição para atualização de token **
+**Exemplo de Requisição para atualização de token**
 ```
 {
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMjgyMzg5NSwiaWF0IjoxNzMyNzM3NDk1LCJqdGkiOiJkMDQ4ZTUwMmVmNmQ0ZGY4OTk3MzFlMWZmYWVkMTEyZSIsInVzZXJfaWQiOjN9.LleQ-6KgYOJJbxPgNdHQ84pAW-WM4YMjRu5j3BveBto"
@@ -125,7 +125,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Listar pré-requisitos de uma disciplina | GET | /subject/:id/prerequisites/ | |
 | Listar pré-requisitos de forma recursiva (pré-requisitos de pré-requisitos e etc) | GET | /subject/:code/prerequisites/?deep=true | |
 
-** Exemplo de Requisição para cadastro de disciplina **
+**Exemplo de Requisição para cadastro de disciplina**
 ```
 {
     "code": "DCA3206",
@@ -144,7 +144,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Excluir histórico de uma disciplina | DELETE | /history/:id/ | Ser aluno e ser o criador do histórico | |
 | Listar histórico de todas as disciplinas | GET | /history/ |  Ser aluno | |
 
-** Exemplo de Requisição para cadastro de histórico **
+**Exemplo de Requisição para cadastro de histórico**
 ```
 {
     "subject": "ECT3101",
@@ -161,7 +161,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Ver o diretório | GET | /directory/:id/ | Ser aluno e ser o criador do diretório |
 | Listar todos os diretórios do aluno | GET | /directory/ | Ser aluno |
 
-** Exemplo de Requisição para criação de diretório **
+**Exemplo de Requisição para criação de diretório**
 ```
 {
     "subject": "ECT3101",
@@ -176,13 +176,13 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Listar todos os arquivos do diretório | GET | /directory/:directory_id/file/ | Ser aluno e ser o dono do diretório |
 | Compartilhar arquivo | POST | /directory/:directory_id/file/:file_id/share/ | Ser aluno e ser o dono do diretório |
 
-** Exemplo de Requisição para criação de diretório (form-data) **
+**Exemplo de Requisição para criação de diretório (form-data)**
 ```
     file: arquivo
     name: nome do arquivo
 ```
 
-** Exemplo de Requisição para compartilhar arquivo **
+**Exemplo de Requisição para compartilhar arquivo**
 ```
 {
     "shared_to_user": 2
@@ -197,7 +197,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Atualizar uma postagem | PATCH | /post/:id/ | Ser professor e o criador da postagem |
 | Excluir uma postagem | DELETE | /post/:id/ | Ser professor e o criador da postagem |
 
-** Exemplo de Requisição para criação de postagem (form-data) **
+**Exemplo de Requisição para criação de postagem (form-data)**
 ```
     file: arquivo anexado
     text: texto da postagem
@@ -212,7 +212,7 @@ A API do CompFlow conta com rotas que cobrem desde a autenticação via JWT até
 | Excluir um planejamento | DELETE | /schedule/:id/ | Ser aluno e ser o criador do planejamento |
 | Listas todos os planejamentos | GET | /schedule/ | Ser aluno e ser o criador do planejamento |
 
-** Exemplo de Requisição para criação de planejamento **
+**Exemplo de Requisição para criação de planejamento**
 ```
 {
     "subjects": ["ECT3101", "ECT3102", "ECT3103"],
@@ -228,14 +228,14 @@ Todas essas rotas podem ser utilizadas ao importar o [arquivo de configuração 
 
 A aplicação foi conteinerizada via Docker. Portanto, é necessário ter este software para a utilização deste software.
 
-** Criar imagem da aplicação **
+**Criar imagem da aplicação**
 Para criar a imagem da aplicação basta, na raíz do projeto, executar o comando
 
 ```
 $ docker build -t compflow .
 ```
 
-** Executar a aplicação **
+**Executar a aplicação**
 Após a criação da imagem, a aplicação pode ser executada com o comando abaixo
 ```
 $ docker run -d -p 8000:8000 compflow
