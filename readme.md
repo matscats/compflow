@@ -62,7 +62,7 @@ pré-requisitos não estiverem completos.
 O presente diagrama de atividades representa o fluxo funcional para a quinta história de
 usuário, descrita anteriormente.
 
-[Diagrama de atividade](./tutorials/diagrama.png)
+![Diagrama de atividade](./tutorials/diagrama.png)
 
 ## Rotas
 
@@ -231,14 +231,14 @@ A aplicação foi conteinerizada via Docker. Portanto, é necessário ter este s
 ** Criar imagem da aplicação **
 Para criar a imagem da aplicação basta, na raíz do projeto, executar o comando
 
-`
+```
 $ docker build -t compflow .
-`
+```
 
 ** Executar a aplicação **
 Após a criação da imagem, a aplicação pode ser executada com o comando abaixo
-`
+```
 $ docker run -d -p 8000:8000 compflow
-`
+```
 
 Após isso, a aplicação estará rodando em http://0.0.0.0:8000/
